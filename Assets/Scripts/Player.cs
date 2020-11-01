@@ -20,11 +20,20 @@ public class Player : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded = false;
 
-    
+    // TODO Weapon Class
+    [SerializeField] private GameObject currentWeaponBulletExit = null;
+    [SerializeField] private float weaponRange = 100f;
+    [SerializeField] private float attackPower = 10f;
+    [SerializeField] ParticleSystem muzzleFlash = null;
+    [SerializeField] private float fireRatePerSecond = 10f;
+    [SerializeField] private float nextTimeToFire;
+
     void Start()
     {
         // getting a CharacterController from the gameObject
         controller = GetComponent<CharacterController>();
+
+        nextTimeToFire = Time.time;
     }
 
     // Update is called once per frame
@@ -33,6 +42,11 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         CameraLook();
         PlayerMouvement();
+
+        if (Input.GetButton("Fire1") && nextTimeToFire <= Time.time){
+            Shoot();
+            nextTimeToFire = Time.time + 1 / fireRatePerSecond; 
+        }
 
     }
 
@@ -77,8 +91,6 @@ public class Player : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-  
-
     private void CameraLook()
     {
         // get value of the horizontal mouvement of the mouse
@@ -104,6 +116,30 @@ public class Player : MonoBehaviour
 
     }
 
-   
+    public void Shoot()
+    {
+        // muzzle flash effect
+        muzzleFlash.Play();
+
+        // init a raycast hit object
+        RaycastHit hit;
+
+        // casting a ray from the location of the weapon, directly forward
+        // information about hit object is stored in hit (RaycastHit)
+        if (Physics.Raycast(currentWeaponBulletExit.transform.position, currentWeaponBulletExit.transform.forward, out hit, weaponRange) ){
+            
+            // display target name in the Console
+            Debug.Log(hit.transform.name);
+
+            // damage the target if it is an enemy
+            Enemy target = hit.transform.GetComponent<Enemy>();
+            if (target != null)
+            {
+                target.TakeDamage(attackPower);
+            }
+        }
+
+        
+    }
 
 }
