@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -20,13 +21,9 @@ public class Player : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded = false;
 
-    // TODO Weapon Class
-    [SerializeField] private GameObject currentWeaponBulletExit = null;
-    [SerializeField] private float weaponRange = 100f;
-    [SerializeField] private float attackPower = 10f;
-    [SerializeField] ParticleSystem muzzleFlash = null;
-    [SerializeField] private float fireRatePerSecond = 10f;
     [SerializeField] private float nextTimeToFire;
+
+    public Weapon currentWeapon = null;
 
     void Start()
     {
@@ -45,7 +42,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButton("Fire1") && nextTimeToFire <= Time.time){
             Shoot();
-            nextTimeToFire = Time.time + 1 / fireRatePerSecond; 
+            nextTimeToFire = Time.time + 1 / currentWeapon.fireRatePerSecond; 
         }
 
     }
@@ -116,18 +113,29 @@ public class Player : MonoBehaviour
 
     }
 
+
     public void Shoot()
     {
-        // muzzle flash effect
-        muzzleFlash.Play();
+       
+        switch (currentWeapon.ammo)
+        {
+            case AmmoType.Type.HIT_SCAN: ShootHitScan(); break;
+        }
+    }
+
+    private void ShootHitScan()
+    {
+
+        currentWeapon.muzzleFlash.Play();
 
         // init a raycast hit object
         RaycastHit hit;
 
         // casting a ray from the location of the weapon, directly forward
         // information about hit object is stored in hit (RaycastHit)
-        if (Physics.Raycast(currentWeaponBulletExit.transform.position, currentWeaponBulletExit.transform.forward, out hit, weaponRange) ){
-            
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, currentWeapon.range))
+        {
+
             // display target name in the Console
             Debug.Log(hit.transform.name);
 
@@ -135,11 +143,9 @@ public class Player : MonoBehaviour
             Enemy target = hit.transform.GetComponent<Enemy>();
             if (target != null)
             {
-                target.TakeDamage(attackPower);
+                target.TakeDamage(currentWeapon.damage);
             }
         }
-
-        
     }
 
 }
