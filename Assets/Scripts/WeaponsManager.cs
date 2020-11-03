@@ -22,11 +22,23 @@ public class WeaponsManager : MonoBehaviour
 
     private void WeaponSwitch()
     {
-        // case skinned tommy gun
-        if (Input.GetKeyDown(KeyCode.E)) SelectWeapon(0);
+        // knife
 
-        // case tommy gun
-        if (Input.GetKeyDown(KeyCode.R)) SelectWeapon(1);
+        // pistol
+        if (Input.GetKeyDown(KeyCode.Alpha1)) SelectWeapon(0);
+
+        // pump action shotun
+        if (Input.GetKeyDown(KeyCode.Alpha2)) SelectWeapon(1);
+
+        // double barrel shotgun
+
+        // tommy gun
+        if (Input.GetKeyDown(KeyCode.Alpha3)) SelectWeapon(2);
+
+        // minigun
+
+        // tommy gun skin
+        if (Input.GetKeyDown(KeyCode.Alpha4)) SelectWeapon(3);
 
     }
 
