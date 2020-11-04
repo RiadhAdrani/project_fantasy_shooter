@@ -11,7 +11,7 @@ public class WeaponsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.currentWeapon = wList[1];
+        SelectWeapon(0);
     }
 
     // Update is called once per frame
@@ -22,6 +22,7 @@ public class WeaponsManager : MonoBehaviour
 
     private void WeaponSwitch()
     {
+        
         // knife
 
         // pistol
@@ -39,6 +40,8 @@ public class WeaponsManager : MonoBehaviour
 
         // tommy gun skin
         if (Input.GetKeyDown(KeyCode.Alpha4)) SelectWeapon(3);
+
+        if (Input.GetKeyDown(KeyCode.Alpha5)) SelectWeapon(4);
 
     }
 

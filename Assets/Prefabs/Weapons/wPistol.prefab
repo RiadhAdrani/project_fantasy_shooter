@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 510264949540996591}
   - component: {fileID: 9019100773802865393}
   - component: {fileID: 8527290712090845345}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 1884806549174216155}
   - component: {fileID: 1884806549174216148}
   - component: {fileID: 1884806549174216149}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 1884806550019137965}
   - component: {fileID: 1884806550019137966}
   - component: {fileID: 1884806550019137967}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 1884806550229782925}
   - component: {fileID: 1884806550229782926}
   - component: {fileID: 1884806550229782927}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 1884806550544850055}
   - component: {fileID: 1884806550544850048}
   - component: {fileID: 1884806550544850049}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,8 +476,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1884806550594609966}
   - component: {fileID: 7496707978427945701}
-  m_Layer: 0
-  m_Name: Pistol
+  m_Layer: 8
+  m_Name: wPistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 1884806550643497550}
   - component: {fileID: 1884806550643497551}
   - component: {fileID: 1884806550643497544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 1884806550653703864}
   - component: {fileID: 1884806550653703865}
   - component: {fileID: 1884806550653703866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 1884806550696421130}
   - component: {fileID: 1884806550696421131}
   - component: {fileID: 1884806550696421124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 1884806550700046148}
   - component: {fileID: 1884806550700046149}
   - component: {fileID: 1884806550700046150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +914,7 @@ GameObject:
   - component: {fileID: 1884806550873141508}
   - component: {fileID: 1884806550873141509}
   - component: {fileID: 1884806550873141510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 1884806551164135145}
   - component: {fileID: 1884806551164135146}
   - component: {fileID: 1884806551164135147}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 1884806551222416000}
   - component: {fileID: 1884806551222416001}
   - component: {fileID: 1884806551222416002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1188,6 +1188,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884806550594609966}
     m_Modifications:
+    - target: {fileID: 2986948927118737477, guid: 78bb3ac990ef0854bab1f8a8b267437d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986948927416200038, guid: 78bb3ac990ef0854bab1f8a8b267437d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2986948927441817360, guid: 78bb3ac990ef0854bab1f8a8b267437d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1247,6 +1257,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: mf_tommy_gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986948927441817363, guid: 78bb3ac990ef0854bab1f8a8b267437d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78bb3ac990ef0854bab1f8a8b267437d, type: 3}
