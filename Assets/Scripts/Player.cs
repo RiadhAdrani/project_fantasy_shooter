@@ -21,16 +21,13 @@ public class Player : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded = false;
 
-    [SerializeField] private float nextTimeToFire;
-
-    public Weapon currentWeapon = null;
+    public WeaponsManager weaponManager;
 
     void Start()
     {
         // getting a CharacterController from the gameObject
         controller = GetComponent<CharacterController>();
 
-        nextTimeToFire = Time.time;
     }
 
     // Update is called once per frame
@@ -40,9 +37,8 @@ public class Player : MonoBehaviour
         CameraLook();
         PlayerMouvement();
 
-        if (Input.GetButton("Fire1") && nextTimeToFire <= Time.time){
+        if (Input.GetButton("Fire1")){
             Shoot();
-            nextTimeToFire = Time.time + 1 / currentWeapon.fireRatePerSecond; 
         }
 
     }
@@ -117,36 +113,8 @@ public class Player : MonoBehaviour
 
     public void Shoot()
     {
-       
-        switch (currentWeapon.ammo)
-        {
-            case AmmoType.Type.HIT_SCAN: ShootHitScan(); break;
-        }
+        weaponManager.Shoot();
     }
 
-    private void ShootHitScan()
-    {
-
-        currentWeapon.muzzleFlash.Play();
-
-        // init a raycast hit object
-        RaycastHit hit;
-
-        // casting a ray from the location of the weapon, directly forward
-        // information about hit object is stored in hit (RaycastHit)
-        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, currentWeapon.range))
-        {
-
-            // display target name in the Console
-            Debug.Log(hit.transform.name);
-
-            // damage the target if it is an enemy
-            Enemy target = hit.transform.GetComponent<Enemy>();
-            if (target != null)
-            {
-                target.TakeDamage(currentWeapon.damage);
-            }
-        }
-    }
 
 }

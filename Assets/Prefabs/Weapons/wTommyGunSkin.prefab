@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 18
   missile: {fileID: 0}
-  fireRatePerSecond: 5
+  fireRatePerSecond: 6
   ammo: 0
   range: 100
   muzzleFlash: {fileID: 4974583987231842070}

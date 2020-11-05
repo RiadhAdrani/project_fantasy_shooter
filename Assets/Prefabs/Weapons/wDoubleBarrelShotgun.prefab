@@ -422,10 +422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7ed5c773ec48e409004b4529b2a1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
+  damage: 12.5
   missile: {fileID: 0}
   fireRatePerSecond: 1.5
-  ammo: 0
+  ammo: 1
   range: 25
   muzzleFlash: {fileID: 1686739244050653838}
 --- !u!1 &4475248028382395309
@@ -455,7 +455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4475248028382395309}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.10137, y: 0.246, z: 1.768}
+  m_LocalPosition: {x: -0.083, y: 0.246, z: 1.768}
   m_LocalScale: {x: 0.18697998, y: 1.944851, z: 0.26449576}
   m_Children: []
   m_Father: {fileID: 4475248028054272855}
@@ -549,7 +549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7979613649041029493}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.075366, y: 0.246, z: 1.7680004}
+  m_LocalPosition: {x: 0.09373599, y: 0.246, z: 1.7680004}
   m_LocalScale: {x: 0.18697998, y: 1.944851, z: 0.26449576}
   m_Children: []
   m_Father: {fileID: 4475248028054272855}

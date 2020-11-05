@@ -9,5 +9,4 @@ public class Weapon : MonoBehaviour
     public AmmoType.Type ammo = AmmoType.Type.HIT_SCAN;
     public int range = 100;
     public ParticleSystem muzzleFlash;
-
 }

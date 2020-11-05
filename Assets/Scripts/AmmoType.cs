@@ -4,8 +4,11 @@ public class AmmoType : MonoBehaviour
 {
     public enum Type
             {
-                // Knife, pistol, shotgun, doubel barrel shotgun, tommy gun, minigun
+                // Knife, pistol, tommy gun, minigun
                 HIT_SCAN,
+
+                // shotgun, doubel barrel shotgun
+                MULTIPLE_HIT_SCAN,
 
                 // Rocket Launcher
                 ROCKET,

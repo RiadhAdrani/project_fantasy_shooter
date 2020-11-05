@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7ed5c773ec48e409004b4529b2a1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 5
   missile: {fileID: 0}
   fireRatePerSecond: 3
   ammo: 0
