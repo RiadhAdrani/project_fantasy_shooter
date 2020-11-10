@@ -26,9 +26,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.297, z: 0.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7769949573690280065}
-  - {fileID: 3450480306646611381}
+  m_Children: []
   m_Father: {fileID: 600928854158004725}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77,10 +75,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7769949574073841517}
-  weaponIndex: 0
+  missileDirections:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   wList:
-  - {fileID: 561555668930081098}
-  - {fileID: 4899350769004186750}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &7769949572186219341
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,191 +351,4 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  nextTimeToFire: 0
-  currentWeapon: {fileID: 0}
---- !u!1001 &3450480306517251993
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 6652710853599919909}
-    m_Modifications:
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277849, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: m_Name
-      value: Tommy Gun
-      objectReference: {fileID: 0}
-    - target: {fileID: 7791064763575376871, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-        type: 3}
-      propertyPath: fireRatePerSecond
-      value: 8
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3173403699046402600, guid: 3b229f052a8e2694a8a2d48afbcdec54, type: 3}
-    - {fileID: 8762220283187937172, guid: 3b229f052a8e2694a8a2d48afbcdec54, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 3b229f052a8e2694a8a2d48afbcdec54, type: 3}
---- !u!4 &7769949573690280065 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4915387033359277848, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-    type: 3}
-  m_PrefabInstance: {fileID: 3450480306517251993}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4899350769004186750 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7791064763575376871, guid: 3b229f052a8e2694a8a2d48afbcdec54,
-    type: 3}
-  m_PrefabInstance: {fileID: 3450480306517251993}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7ed5c773ec48e409004b4529b2a1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1001 &7769949574098463405
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 6652710853599919909}
-    m_Modifications:
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277849, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_Name
-      value: Tommy Gun Skin
-      objectReference: {fileID: 0}
-    - target: {fileID: 4915387033359277849, guid: c5dbf1ef14247b24191a382e53b3771f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c5dbf1ef14247b24191a382e53b3771f, type: 3}
---- !u!4 &3450480306646611381 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4915387033359277848, guid: c5dbf1ef14247b24191a382e53b3771f,
-    type: 3}
-  m_PrefabInstance: {fileID: 7769949574098463405}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &561555668930081098 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7791064763575376871, guid: c5dbf1ef14247b24191a382e53b3771f,
-    type: 3}
-  m_PrefabInstance: {fileID: 7769949574098463405}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7ed5c773ec48e409004b4529b2a1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  weaponManager: {fileID: 0}

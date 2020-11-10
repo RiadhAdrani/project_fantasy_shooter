@@ -475,7 +475,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1884806550594609966}
-  - component: {fileID: 7496707978427945701}
   m_Layer: 8
   m_Name: wPistol
   m_TagString: Untagged
@@ -510,24 +509,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7496707978427945701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884806550594609967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7ed5c773ec48e409004b4529b2a1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
-  missile: {fileID: 0}
-  fireRatePerSecond: 3
-  ammo: 0
-  range: 1000
-  muzzleFlash: {fileID: 7504322808479227602}
 --- !u!1 &1884806550643497546
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +537,7 @@ Transform:
   m_GameObject: {fileID: 1884806550643497546}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.183, z: -0.524}
-  m_LocalScale: {x: 0.5, y: 0.09, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 0.04, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1884806550594609966}
   m_RootOrder: 2
@@ -1268,12 +1249,6 @@ PrefabInstance:
 --- !u!4 &7504322808479227596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2986948927441817360, guid: 78bb3ac990ef0854bab1f8a8b267437d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4708359397068460508}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7504322808479227602 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2986948927441817358, guid: 78bb3ac990ef0854bab1f8a8b267437d,
     type: 3}
   m_PrefabInstance: {fileID: 4708359397068460508}
   m_PrefabAsset: {fileID: 0}

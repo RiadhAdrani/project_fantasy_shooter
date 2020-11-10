@@ -116,5 +116,4 @@ public class Player : MonoBehaviour
         weaponManager.Shoot();
     }
 
-
 }

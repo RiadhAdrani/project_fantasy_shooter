@@ -974,7 +974,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4915387033359277848}
-  - component: {fileID: 7791064763575376871}
   m_Layer: 8
   m_Name: wTommyGunSkin
   m_TagString: Untagged
@@ -1005,24 +1004,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7791064763575376871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4915387033359277849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7ed5c773ec48e409004b4529b2a1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 18
-  missile: {fileID: 0}
-  fireRatePerSecond: 6
-  ammo: 0
-  range: 100
-  muzzleFlash: {fileID: 4974583987231842070}
 --- !u!1 &4915387033672675078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,12 +1810,6 @@ PrefabInstance:
 --- !u!4 &4974583987231842056 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2986948927441817360, guid: 78bb3ac990ef0854bab1f8a8b267437d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7816705234464116760}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &4974583987231842070 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2986948927441817358, guid: 78bb3ac990ef0854bab1f8a8b267437d,
     type: 3}
   m_PrefabInstance: {fileID: 7816705234464116760}
   m_PrefabAsset: {fileID: 0}

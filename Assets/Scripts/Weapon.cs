@@ -1,12 +1,62 @@
-﻿using System.Runtime.InteropServices.ComTypes;
+﻿using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
-    public float damage = 10f;
-    public GameObject missile = null;
-    public float fireRatePerSecond = 1;
-    public AmmoType.Type ammo = AmmoType.Type.HIT_SCAN;
-    public int range = 100;
-    public ParticleSystem muzzleFlash;
+
+    public float mDamage = 1.0f;
+    public int mRange = 10;
+    public int mMagazineSize = -1;
+    public ParticleSystem mMuzzleFlash = null;
+    public int mFireRatePerSecond;
+    public GameObject mShootingReference = null;
+
+    public void Constructor()
+    {
+        setDamage(mDamage);
+        setRange(mRange);
+        setMagazineSize(mMagazineSize);
+        setMuzzleFlash(mMuzzleFlash);
+        setFireRatePerSecond(mFireRatePerSecond);
+        setShootingReference(mShootingReference);
+    }
+
+    // How much damage is dealt by the weapon
+    private float damage;
+            public float getDamage() { return damage; }
+            public void setDamage(float damage) { this.damage = damage; }
+
+    // For How much long can the weapon missile reach 
+    private int range;
+            public int getRange() { return range; }
+            public void setRange(int range) { this.range = range; }
+
+    // Capacity of the magazine
+    private int magazineSize;
+            public int getMagazineSize() { return magazineSize; } 
+            public void setMagazineSize(int magazineSize) { this.magazineSize = magazineSize; }
+     
+    // Muzzle Flash played
+    private ParticleSystem muzzleFlash;
+            public ParticleSystem getMuzzleFlash() { return muzzleFlash; }
+            public void setMuzzleFlash(ParticleSystem muzzleFlash) { this.muzzleFlash = muzzleFlash; }
+
+    // Fire rate per second
+    private int fireRatePerSecond;
+            public int getFireRatePerSecond() { return fireRatePerSecond; }
+            public void setFireRatePerSecond(int fireRatePerSecond) { this.fireRatePerSecond = fireRatePerSecond; }
+
+    // Shooting reference. generaly the player camera
+    private GameObject shootingReference;
+            public GameObject getShootingReference() { return shootingReference; }
+            public void setShootingReference(GameObject shootingReference) { this.shootingReference = shootingReference; }
+
+    public abstract void Shoot();
+    public abstract void Reload();
+    public void PlayMuzzleFlash()
+    {
+        muzzleFlash.Play();
+    }
+
 }

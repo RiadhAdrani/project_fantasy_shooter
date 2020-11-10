@@ -381,7 +381,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4475248028054272855}
-  - component: {fileID: 493445491}
   m_Layer: 8
   m_Name: wDoubleBarrelShotgun
   m_TagString: Untagged
@@ -410,24 +409,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &493445491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4475248028054272852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7ed5c773ec48e409004b4529b2a1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 12.5
-  missile: {fileID: 0}
-  fireRatePerSecond: 1.5
-  ammo: 1
-  range: 25
-  muzzleFlash: {fileID: 1686739244050653838}
 --- !u!1 &4475248028382395309
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,12 +719,6 @@ PrefabInstance:
 --- !u!4 &1686739244050653840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2986948927441817360, guid: 78bb3ac990ef0854bab1f8a8b267437d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4475248026549415296}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1686739244050653838 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2986948927441817358, guid: 78bb3ac990ef0854bab1f8a8b267437d,
     type: 3}
   m_PrefabInstance: {fileID: 4475248026549415296}
   m_PrefabAsset: {fileID: 0}
