@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Transactions;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WeaponsManager : MonoBehaviour
 {
@@ -16,7 +14,13 @@ public class WeaponsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach (Weapon w in wList)
+        {
+            w.setShootingReference(player.getPlayerCamera());
+        }
+
         nextTimeToFire = Time.time;
+
         SelectWeapon(0);
     }
 
@@ -41,34 +45,42 @@ public class WeaponsManager : MonoBehaviour
         
         // knife
 
-        // pistol
+        // Weapon 1
         if (Input.GetKeyDown(KeyCode.Alpha1)) SelectWeapon(0);
 
-        // pump action shotun
-        // if (Input.GetKeyDown(KeyCode.Alpha2)) SelectWeapon(1);
+        // Weapon 2
+        if (Input.GetKeyDown(KeyCode.Alpha2)) SelectWeapon(1);
 
-        // double barrel shotgun
+        // Weapon 3
+        if (Input.GetKeyDown(KeyCode.Alpha3)) SelectWeapon(2);
 
-        // tommy gun
-        // if (Input.GetKeyDown(KeyCode.Alpha3)) SelectWeapon(2);
+        // Weapon 4
+        if (Input.GetKeyDown(KeyCode.Alpha4)) SelectWeapon(3);
 
-        // minigun
+        // Weapon 5
+        if (Input.GetKeyDown(KeyCode.Alpha5)) SelectWeapon(4);
 
-        // tommy gun skin
-        // if (Input.GetKeyDown(KeyCode.Alpha4)) SelectWeapon(3);
+        // Weapon 6
+        if (Input.GetKeyDown(KeyCode.Alpha6)) SelectWeapon(5);
 
-        // if (Input.GetKeyDown(KeyCode.Alpha5)) SelectWeapon(4);
+        // Weapon 7
+        if (Input.GetKeyDown(KeyCode.Alpha7)) SelectWeapon(6);
 
     }
 
     private void SelectWeapon(int index)
     {
-        weaponIndex = index;
-
-        for (int i =0; i < wList.Length; i++)
+        if (index <= wList.Length - 1)
         {
-            if (i == index) wList[i].gameObject.SetActive(true);
-            else wList[i].gameObject.SetActive(false);
-        }
+            weaponIndex = index;
+
+            for (int i = 0; i < wList.Length; i++)
+            {
+                if (i == index) wList[i].gameObject.SetActive(true);
+                else wList[i].gameObject.SetActive(false);
+            }
+
+            // wList[weaponIndex].setShootingReference(player.getPlayerCamera());
+        }       
     }
 }

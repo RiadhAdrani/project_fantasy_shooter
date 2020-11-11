@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using System.Runtime.InteropServices.ComTypes;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
@@ -9,7 +7,7 @@ public abstract class Weapon : MonoBehaviour
     public int mRange = 10;
     public int mMagazineSize = -1;
     public ParticleSystem mMuzzleFlash = null;
-    public int mFireRatePerSecond;
+    public float mFireRatePerSecond;
     public GameObject mShootingReference = null;
 
     public void Constructor()
@@ -19,7 +17,7 @@ public abstract class Weapon : MonoBehaviour
         setMagazineSize(mMagazineSize);
         setMuzzleFlash(mMuzzleFlash);
         setFireRatePerSecond(mFireRatePerSecond);
-        setShootingReference(mShootingReference);
+        setShootingReference(FindObjectOfType<Player>().getPlayerCamera());
     }
 
     // How much damage is dealt by the weapon
@@ -43,9 +41,9 @@ public abstract class Weapon : MonoBehaviour
             public void setMuzzleFlash(ParticleSystem muzzleFlash) { this.muzzleFlash = muzzleFlash; }
 
     // Fire rate per second
-    private int fireRatePerSecond;
-            public int getFireRatePerSecond() { return fireRatePerSecond; }
-            public void setFireRatePerSecond(int fireRatePerSecond) { this.fireRatePerSecond = fireRatePerSecond; }
+    private float fireRatePerSecond;
+            public float getFireRatePerSecond() { return fireRatePerSecond; }
+            public void setFireRatePerSecond(float fireRatePerSecond) { this.fireRatePerSecond = fireRatePerSecond; }
 
     // Shooting reference. generaly the player camera
     private GameObject shootingReference;
@@ -56,7 +54,7 @@ public abstract class Weapon : MonoBehaviour
     public abstract void Reload();
     public void PlayMuzzleFlash()
     {
-        muzzleFlash.Play();
+        if (muzzleFlash != null) muzzleFlash.Play();
     }
 
 }

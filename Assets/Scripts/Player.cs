@@ -10,7 +10,10 @@ public class Player : MonoBehaviour
     private CharacterController controller;
 
     [SerializeField] private float mouseSensitivity = 10f;
+
     [SerializeField] private GameObject playerCamera = null;
+                     public GameObject getPlayerCamera() { return playerCamera; }
+
     private float cameraRotation = 0f;
 
     [SerializeField] private float mouvementSpeed = 10f;
