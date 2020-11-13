@@ -41,7 +41,7 @@ public class Shotgun : Weapon
             float y = Random.Range(-spreadAngle, spreadAngle);
 
             RaycastHit hit;
-            Physics.Raycast(getShootingReference().transform.position, getShootingReference().transform.forward + new Vector3(x,y,0), out hit, getRange());
+            Physics.Raycast(getShootingReference().transform.position, getShootingReference().transform.forward + new Vector3(x,y,0), out hit, getRange(), -5, QueryTriggerInteraction.Ignore);
 
             if (hit.transform != null)
             {

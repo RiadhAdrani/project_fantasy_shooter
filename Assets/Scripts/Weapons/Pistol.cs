@@ -18,7 +18,7 @@ public class Pistol : Weapon
         PlayMuzzleFlash();
 
         RaycastHit hit;
-        Physics.Raycast(getShootingReference().transform.position, getShootingReference().transform.forward, out hit, getRange());
+        Physics.Raycast(getShootingReference().transform.position, getShootingReference().transform.forward, out hit, getRange(), -5, QueryTriggerInteraction.Ignore);
 
         if (hit.transform != null)
         {
