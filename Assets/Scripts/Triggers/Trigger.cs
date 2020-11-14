@@ -34,7 +34,7 @@ public abstract class Trigger : MonoBehaviour
             public TriggerCollider[] mColliders;
 
     // public constructor
-    public void Contructor()
+    public void Constructor()
     {
         setIsTriggered(mIsTriggered);
         setIsFinished(mIsFinished);
