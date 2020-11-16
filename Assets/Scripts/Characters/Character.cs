@@ -101,4 +101,19 @@ public abstract class Character : MonoBehaviour
     {
         return Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
     }
+
+    public void TakeDamage(float damage)
+    {
+        hitPoint -= damage;
+        if (hitPoint < 0) { 
+            hitPoint = 0;
+            onDeath();
+        }
+    }
+
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
+
 }
