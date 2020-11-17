@@ -1,65 +1,49 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class FollowAI : MonoBehaviour
 {
     public Transform target;
-    public Character character;
-    public UnityEngine.AI.NavMeshAgent navMeshAgent;
-
+    public NavMeshAgent navMeshAgent;
+    public float checkRate;
+    public float nextCheck;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
-        {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-        }
+        nextCheck = Time.time;
+
+        target = UpdateTarget("Player");
         
-        navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
 
         navMeshAgent.destination = target.position;
+
+        navMeshAgent.acceleration = GetComponent<Character>().getRunSpeed();
+
+        navMeshAgent.updateUpAxis = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        character.Run();
-
-        Vector3 lookPos;
-        Quaternion targetRotation;
-
-        setDestination(target);
-
-        character.setVelocity(navMeshAgent.desiredVelocity);
-
-        navMeshAgent.updatePosition = false;
-        navMeshAgent.updateRotation = false;
-
-        lookPos = target.position - transform.position;
+        if (Time.time > nextCheck)
+        {
+            nextCheck = Time.time + checkRate;
+            navMeshAgent.destination = target.transform.position;
+            FollowTarget(target);
+        }
         
-        lookPos.y = 0;
-        
-        targetRotation = Quaternion.LookRotation(lookPos);
-
-        transform.rotation = Quaternion.Slerp(transform.rotation, 
-                                              targetRotation, 
-                                              Time.deltaTime * character.getWalkSpeed()
-                                              );
-
-        character.getController().Move(character.getVeclocity().normalized * character.getRunSpeed() * Time.deltaTime);
-
-        navMeshAgent.velocity = character.getController().velocity;
-
-    }
-
-    private void setDestination(Transform target)
-    {
-        navMeshAgent.destination = target.position;
     }
 
     private void FollowTarget(Transform target)
     {
         navMeshAgent.transform.LookAt(target);
-        setDestination(target);
     }
+
+    private Transform UpdateTarget(string tag)
+    {
+        return GameObject.FindGameObjectWithTag(tag).transform;
+    }
+
 }

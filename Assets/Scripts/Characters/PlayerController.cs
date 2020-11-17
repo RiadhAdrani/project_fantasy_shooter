@@ -32,12 +32,17 @@ public class PlayerController : Character
         setVelocityY(Mathf.Sqrt(getJumpHeight() * -2f * CONST.GRAVITY));
     }
 
-    public override void onAwake()
+    public override void OnAwake()
     {
         throw new System.NotImplementedException();
     }
 
-    public override void onDeath()
+    public override void OnDeath()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void ApplyGravity()
     {
         throw new System.NotImplementedException();
     }
@@ -122,4 +127,6 @@ public class PlayerController : Character
             Shoot();
         }
     }
+
+
 }
