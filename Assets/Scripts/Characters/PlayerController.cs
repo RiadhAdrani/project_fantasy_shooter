@@ -2,6 +2,11 @@
 
 public class PlayerController : Character
 {
+    private CharacterController controller;
+            public CharacterController mController;
+            public void setController(CharacterController controller) { this.controller = controller; }
+            public CharacterController getController() { return controller; }
+
     private float mouseSensitivty;
             public float mMouseSensitivity;
             public void setMouseSensitivity(float sensitivity) { mouseSensitivty = sensitivity; }
@@ -102,6 +107,7 @@ public class PlayerController : Character
         setpCamera(mCamera);
         setCameraRotation(mCameraRotation);
         setWeaponManager(mWeaponManager);
+        setController(mController);
     }
 
     // Update is called once per frame

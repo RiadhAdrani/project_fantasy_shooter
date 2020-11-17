@@ -24,14 +24,7 @@ public class Enemy : Character,IEnemy
 
     public override void Run()
     {
-        if (getIsGrounded() && getVeclocity().y < 0)
-        {
-            setVelocityY(CONST.IDLE_VELOCITY);
-        }
-
-        setVelocityY(getVeclocity().y + CONST.GRAVITY * Time.deltaTime);
-
-        getController().Move(getVeclocity() * Time.deltaTime);
+        
     }
 
     public override void Jump()
@@ -39,14 +32,19 @@ public class Enemy : Character,IEnemy
         throw new System.NotImplementedException();
     }
 
-    public override void onAwake()
+    public override void OnAwake()
     {
         throw new System.NotImplementedException();
     }
 
-    public override void onDeath()
+    public override void OnDeath()
     {
         DestroyObject();
+    }
+
+    public override void ApplyGravity()
+    {
+        throw new System.NotImplementedException();
     }
 
     public void eConstructor()

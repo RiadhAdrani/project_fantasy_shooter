@@ -2,12 +2,7 @@
 
 public abstract class Character : MonoBehaviour
 {
-    // Character controller provides easy methods to controller a character
-    private CharacterController controller;
-            public CharacterController mController;
-            public void setController(CharacterController controller) { this.controller = controller; }
-            public CharacterController getController() { return controller; }
-
+    
     // Hit Point
     private float hitPoint;
             public float mHitPoint;
@@ -68,7 +63,6 @@ public abstract class Character : MonoBehaviour
     // public Constructor
     public void Constructor()
     {
-        setController(mController);
         setHitPoint(mHitPoint);
         setWalkSpeed(mWalkSpeed);
         setRunSpeed(mRunSpeed);
@@ -89,10 +83,12 @@ public abstract class Character : MonoBehaviour
     public abstract void Jump();
 
     // onAwake()
-    public abstract void onAwake();
+    public abstract void OnAwake();
 
     // on death actions
-    public abstract void onDeath();
+    public abstract void OnDeath();
+
+    public abstract void ApplyGravity();
 
     // IsGrounded()
     // return true if the character is grounded
@@ -107,7 +103,7 @@ public abstract class Character : MonoBehaviour
         hitPoint -= damage;
         if (hitPoint < 0) { 
             hitPoint = 0;
-            onDeath();
+            OnDeath();
         }
     }
 
