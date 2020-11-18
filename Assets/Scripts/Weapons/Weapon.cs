@@ -17,7 +17,7 @@ public abstract class Weapon : MonoBehaviour
         setMagazineSize(mMagazineSize);
         setMuzzleFlash(mMuzzleFlash);
         setFireRatePerSecond(mFireRatePerSecond);
-        setShootingReference(FindObjectOfType<Player>().getPlayerCamera());
+        setShootingReference(FindObjectOfType<PlayerController>().getCamera());
     }
 
     // How much damage is dealt by the weapon

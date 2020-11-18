@@ -12,9 +12,19 @@ public class Enemy : Character,IEnemy
             public void setMeleeRange(float range) { meleeRange = range; }
             public float getMeleeRange() { return meleeRange; }
 
-    public void MeleeAttack()
-    {
+    private float reloadTime;
+            public float mReloadTime;
+            public void setReloadTime(float time) { reloadTime = time; }
+            public float getReloadTime() { return reloadTime; }
 
+    private float nextTimeToAttack = 0f;
+            public void setNextTimeToAttack(float time) { nextTimeToAttack = time; }
+            public float getNextTimeToReload() { return nextTimeToAttack; }
+
+    public void MeleeAttack(Character unit)
+    {
+        unit.TakeDamage(meleePower);
+        Debug.Log("Target HP Left: " + unit.getHitPoint());
     }
 
     public override void Walk()
@@ -52,6 +62,8 @@ public class Enemy : Character,IEnemy
         Constructor();
         setMeleePower(mMeleePower);
         setMeleeRange(mMeleeRange);
+        setNextTimeToAttack(0);
+        setReloadTime(mReloadTime);
     }
 
     public void rConstructor()

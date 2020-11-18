@@ -39,7 +39,7 @@ public class PlayerController : Character
 
     public override void OnDeath()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("You Died");
     }
 
     public override void ApplyGravity()

@@ -3,23 +3,27 @@ using UnityEngine.AI;
 
 public class FollowAI : MonoBehaviour
 {
-    public Transform target;
+    public Character target;
     public NavMeshAgent navMeshAgent;
+    public Enemy unit;
     public float checkRate;
     public float nextCheck;
 
     // Start is called before the first frame update
     void Start()
     {
-        nextCheck = Time.time;
-
-        target = UpdateTarget("Player");
-        
+        unit = GetComponent<Enemy>();
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        navMeshAgent.destination = target.position;
+        nextCheck = Time.time;
 
-        navMeshAgent.acceleration = GetComponent<Character>().getRunSpeed();
+        target = UpdateTarget("Player").GetComponent<Character>();
+        
+        navMeshAgent.destination = target.transform.position;
+
+        navMeshAgent.acceleration = unit.getRunSpeed();
+
+        navMeshAgent.stoppingDistance = unit.getMeleeRange();
 
         navMeshAgent.updateUpAxis = false;
     }
@@ -31,7 +35,20 @@ public class FollowAI : MonoBehaviour
         {
             nextCheck = Time.time + checkRate;
             navMeshAgent.destination = target.transform.position;
-            FollowTarget(target);
+            FollowTarget(target.transform);
+
+            if (navMeshAgent.remainingDistance <= unit.getMeleeRange())
+            {
+                if (Time.time >= unit.getNextTimeToReload())
+                {
+                    if ( Vector3.Distance(transform.position,target.transform.position) <= unit.getMeleeRange())
+                    {
+                        unit.setNextTimeToAttack(Time.time + unit.getReloadTime());
+                        unit.MeleeAttack(target);
+                        Debug.Log("Attacked Player !!!");
+                    }
+                }
+            }
         }
         
     }

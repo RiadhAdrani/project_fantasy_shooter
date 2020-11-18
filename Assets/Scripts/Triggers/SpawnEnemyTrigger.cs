@@ -76,6 +76,7 @@ public class SpawnEnemyTrigger : Trigger
                     false);
 
             nextTimeToSpawn = Time.time + spawnDelay;
+            Debug.Log("Spawned Enemies :" + index + 1);
             index++;
 
             if (index >= enemyList.Length) { 

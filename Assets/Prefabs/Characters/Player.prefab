@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c3ec1d857a6554ba308111a3633e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7769949574073841517}
+  player: {fileID: 535499035}
   missileDirections:
   - {fileID: 1201640354}
   - {fileID: 1023339317}
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 7769949574073841519}
   - component: {fileID: 7769949574073841518}
   - component: {fileID: 7769949574073841522}
-  - component: {fileID: 7769949574073841517}
+  - component: {fileID: 535499035}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -840,7 +840,7 @@ CharacterController:
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0.01
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7769949574073841517
+--- !u!114 &535499035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -849,19 +849,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 7769949574073841512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 797f04f7957686142b3ab098bbe50681, type: 3}
+  m_Script: {fileID: 11500000, guid: 49237248109478445974b9c16765fb46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 150
-  playerCamera: {fileID: 7769949572458842643}
-  mouvementSpeed: 8
-  velocity: {x: 0, y: 0, z: 0}
-  jumpHeight: 1.5
-  groundCheck: {fileID: 7769949572646957232}
-  groundMask:
+  mHitPoint: 100
+  mWalkSpeed: 0
+  mRunSpeed: 8
+  mJumpHeight: 1.5
+  mVelocity: {x: 0, y: 0, z: 0}
+  mGroundCheck: {fileID: 7769949572646957232}
+  mGroundDistance: 0.15
+  mGroundMask:
     serializedVersion: 2
     m_Bits: 1024
-  weaponManager: {fileID: 3199616720494092391}
+  mIsGrounded: 0
+  mController: {fileID: 7769949574073841522}
+  mMouseSensitivity: 150
+  mCamera: {fileID: 7769949572458842643}
+  mCameraRotation: 0
+  mWeaponManager: {fileID: 3199616720494092391}
 --- !u!1001 &7769949572220034931
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@
 public class WeaponsManager : MonoBehaviour
 {
 
-    public Player player;
+    public PlayerController player;
     private int weaponIndex = 0;
     public GameObject[] missileDirections = new GameObject[5];
 
@@ -14,9 +14,10 @@ public class WeaponsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         foreach (Weapon w in wList)
         {
-            w.setShootingReference(player.getPlayerCamera());
+            w.setShootingReference(player.getCamera());
         }
 
         nextTimeToFire = Time.time;
