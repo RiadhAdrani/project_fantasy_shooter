@@ -18,6 +18,7 @@ MonoBehaviour:
   mMuzzleFlash: {fileID: 3270016637718998496}
   mFireRatePerSecond: 2
   mShootingReference: {fileID: 0}
+  mSfx: {fileID: 8300000, guid: 49f01cab1b32d3e4194e94cf51162ada, type: 3}
 --- !u!1001 &293482708078486254
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ MonoBehaviour:
   mMuzzleFlash: {fileID: 4766297561157988739}
   mFireRatePerSecond: 0.85
   mShootingReference: {fileID: 0}
+  mSfx: {fileID: 8300000, guid: 49f01cab1b32d3e4194e94cf51162ada, type: 3}
   mSpreadNumber: 4
   mSpreadAngle: 0.05
 --- !u!1001 &1681888438590175955

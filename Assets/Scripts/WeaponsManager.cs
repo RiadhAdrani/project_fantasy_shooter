@@ -4,25 +4,23 @@ public class WeaponsManager : MonoBehaviour
 {
 
     public PlayerController player;
-    private int weaponIndex = 0;
-    public GameObject[] missileDirections = new GameObject[5];
 
-    [SerializeField] private float nextTimeToFire;
+    private int weaponIndex = 0;
+
+    private float nextTimeToFire;
 
     public Weapon[] wList = new Weapon[11];
+
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        foreach (Weapon w in wList)
-        {
-            w.setShootingReference(player.getCamera());
-        }
-
         nextTimeToFire = Time.time;
 
         SelectWeapon(0);
+
+        audioSource.clip = wList[weaponIndex].getSfx();
     }
 
     // Update is called once per frame
@@ -36,16 +34,14 @@ public class WeaponsManager : MonoBehaviour
         if (Time.time >= nextTimeToFire)
         {
             wList[weaponIndex].Shoot();
+            audioSource.Play();
             nextTimeToFire = Time.time + (1.0f / wList[weaponIndex].getFireRatePerSecond()) ;
         }
-          
     }
 
     private void WeaponSwitch()
     {
         
-        // knife
-
         // Weapon 1
         if (Input.GetKeyDown(KeyCode.Alpha1)) SelectWeapon(0);
 
@@ -75,13 +71,15 @@ public class WeaponsManager : MonoBehaviour
         {
             weaponIndex = index;
 
+            wList[weaponIndex].setShootingReference(player.getCamera());
+            audioSource.clip = wList[weaponIndex].getSfx();
+
             for (int i = 0; i < wList.Length; i++)
             {
                 if (i == index) wList[i].gameObject.SetActive(true);
                 else wList[i].gameObject.SetActive(false);
             }
 
-            // wList[weaponIndex].setShootingReference(player.getPlayerCamera());
         }       
     }
 }

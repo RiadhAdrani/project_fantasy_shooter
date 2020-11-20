@@ -17,7 +17,8 @@ public abstract class Weapon : MonoBehaviour
         setMagazineSize(mMagazineSize);
         setMuzzleFlash(mMuzzleFlash);
         setFireRatePerSecond(mFireRatePerSecond);
-        setShootingReference(FindObjectOfType<PlayerController>().getCamera());
+        setShootingReference(mShootingReference);
+        setSfx(mSfx);
     }
 
     // How much damage is dealt by the weapon
@@ -49,6 +50,11 @@ public abstract class Weapon : MonoBehaviour
     private GameObject shootingReference;
             public GameObject getShootingReference() { return shootingReference; }
             public void setShootingReference(GameObject shootingReference) { this.shootingReference = shootingReference; }
+
+    private AudioClip sfx;
+            public AudioClip mSfx;
+            public AudioClip getSfx() { return sfx; }
+            public void setSfx(AudioClip sfx) { this.sfx = sfx; }
 
     public abstract void Shoot();
     public abstract void Reload();
